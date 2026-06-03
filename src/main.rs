@@ -34,4 +34,29 @@ fn main() {
     falcon.status();
     falcon.accelerate();
     falcon.status();
+
+    let mut fleet: Vec<Rocket> = Vec::new(); 
+
+    fleet.push(Rocket::new("Apollo"));
+    fleet.push(Rocket::new("Gemini"));  
+
+    println!("Fleet Status:");
+
+    for rocket in &fleet { 
+        rocket.status();
+    }
+
+    for rocket in &mut fleet { 
+        rocket.accelerate();
+    }
+    
+    fleet.push(Rocket::new("Artemis"));  
+
+    for rocket in &mut fleet { 
+        rocket.accelerate();
+    }
+    
+    for rocket in &fleet { 
+        rocket.status();
+    }
 }
